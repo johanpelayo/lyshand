@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorización de Mercado Libre</title>
+
+    <style>
+        body {
+            max-width: 760px;
+            margin: 60px auto;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .resultado {
+            padding: 20px;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            background: #f7f7f7;
+        }
+
+        code {
+            display: block;
+            padding: 12px;
+            overflow-wrap: anywhere;
+            background: white;
+            border: 1px solid #dddddd;
+        }
+
+        button {
+            padding: 10px 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Autorización de Mercado Libre</h1>
+
+    <div class="resultado">
+        <p id="mensaje">
+            Revisando la respuesta de autorización...
+        </p>
+
+        <p><strong>Código recibido:</strong></p>
+        <code id="codigo">No disponible</code>
+
+        <p><strong>State recibido:</strong></p>
+        <code id="state">No disponible</code>
+
+        <br>
+
+        <button id="copiar" type="button">
+            Copiar código
+        </button>
+    </div>
+
+    <script>
+        const parametros = new URLSearchParams(window.location.search);
+        const codigo = parametros.get("code");
+        const state = parametros.get("state");
+        const error = parametros.get("error");
+
+        const mensaje = document.getElementById("mensaje");
+        const codigoElemento = document.getElementById("codigo");
+        const stateElemento = document.getElementById("state");
+        const boton = document.getElementById("copiar");
+
+        if (codigo) {
+            mensaje.textContent =
+                "La autorización fue recibida. Copia el código y regresa a PowerShell.";
+
+            codigoElemento.textContent = codigo;
+            stateElemento.textContent = state || "No recibido";
+        } else if (error) {
+            mensaje.textContent =
+                "Mercado Libre devolvió un error: " + error;
+
+            boton.disabled = true;
+        } else {
+            mensaje.textContent =
+                "La página está funcionando, pero todavía no recibió un código de autorización.";
+
+            boton.disabled = true;
+        }
+
+        boton.addEventListener("click", async () => {
+            if (!codigo) {
+                return;
+            }
+
+            try {
+                await navigator.clipboard.writeText(codigo);
+                boton.textContent = "Código copiado";
+            } catch (errorCopiado) {
+                alert("Selecciona y copia manualmente el código.");
+            }
+        });
+    </script>
+</body>
+</html>
