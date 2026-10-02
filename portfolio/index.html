@@ -37,7 +37,7 @@
 <dialog id="contact-dialog" aria-labelledby="contact-title"><div class="dialog-head"><h2 id="contact-title">Iniciar conversación</h2><button class="dialog-close" type="button">Cerrar</button></div><p class="contact-note" id="contact-note">El correo de contacto aún no está configurado. Puedes preparar y copiar tu mensaje, o consultar mi <a href="https://github.com/johanpelayo" target="_blank" rel="noopener noreferrer">perfil de GitHub</a>.</p><form class="contact-form" id="contact-form"><label for="name">Tu nombre</label><input id="name" name="name" autocomplete="name" maxlength="120" required><label for="message">¿Qué quieres construir?</label><textarea id="message" name="message" maxlength="4000" placeholder="Cuéntame sobre tu idea, objetivos y plazos…" required></textarea><p class="contact-note" style="font-size:14px;margin:12px 0 0">Tu mensaje no se envía ni se almacena en el sitio.</p><div class="dialog-actions"><button type="submit" class="button">Copiar mensaje</button><a id="email-action" class="button secondary" hidden>Abrir correo</a></div><p id="contact-status" class="status" role="status" aria-live="polite"></p></form></dialog>
 <script>
 // Agrega únicamente los canales profesionales que quieras hacer públicos.
-const CONTACT={email:'',linkedin:''};
+const CONTACT={email:'ing.lyshand@gmail.com',linkedin:'https://www.linkedin.com/in/johanpelayo/'};
 const nav=document.getElementById('nav'),menu=document.querySelector('.menu-toggle');
 function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
