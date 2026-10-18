@@ -8,15 +8,17 @@ Abre `index.html` en un navegador, manteniendo la carpeta `assets` a su lado. El
 
 Referencia: https://www.figma.com/design/xs4K8JGVqW5uuTgVzD1j1v/Johan-Pelayo-Portfolio-Landing-Page?node-id=2-116
 
-## Contenido pendiente en el diseño original
+## Proyectos y demos
 
-El diseño de escritorio incluye proyectos “Próximamente”, descripciones “Lorem ipsum” y testimonios sin nombres reales. El diseño móvil conserva ejemplos distintos. Se adoptó el contenido de escritorio como fuente principal para mantener información coherente en todas las pantallas. Los textos “Lorem ipsum” se sustituyeron por avisos explícitos de contenido pendiente; no se inventaron clientes, testimonios ni resultados.
+Las tarjetas de Nimbus, Nómada y Relay muestran sus previews PNG completos. El botón «Ver demo» de cada tarjeta y la sección «Explora las demos» abren los HTML interactivos en una nueva pestaña.
 
-Antes de compartirlo comercialmente, agrega tus proyectos y testimonios reales. Las tarjetas mantienen su composición original y los espacios violeta de vista previa.
+Los previews se encuentran en `assets/projects/` y las demos autónomas en `demos/`. Conserva ambas carpetas al publicar. Las demos son conceptos de portafolio con datos de demostración.
+
+Los testimonios siguen pendientes de contenido verificado.
 
 ## Contacto
 
-Busca `const CONTACT` al final de `index.html`. Completa `email` y `linkedin` con los datos profesionales que quieras publicar. Vacíos por defecto: no se han publicado datos privados de tu cuenta. El perfil de GitHub enlazado es `johanpelayo`.
+Busca `const CONTACT` al final de `index.html`. El correo de contacto configurado es `ing.johanpelayo@gmail.com`. Actualiza `email` y `linkedin` cuando cambien tus canales profesionales. El perfil de GitHub enlazado es `johanpelayo`.
 
 Sin correo configurado, el diálogo prepara y copia un mensaje, pero no lo envía. Con un correo válido, habilita “Abrir correo”, que abre el cliente de correo del visitante con un borrador. LinkedIn admite una URL `https://www.linkedin.com/…` o `https://linkedin.com/…`.
 
@@ -31,6 +33,8 @@ La carpeta del sitio debe conservar la estructura:
 - README.md
 - assets/johan-pelayo.jpg
 - assets/status.svg
+- assets/projects/*.png
+- demos/*.html
 - assets/fonts/*.ttf
 
 Las fuentes se distribuyen bajo SIL Open Font License 1.1; véase `assets/fonts/OFL.txt`.
